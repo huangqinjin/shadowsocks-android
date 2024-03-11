@@ -12,6 +12,11 @@ setupApp()
 android {
     namespace = "com.github.shadowsocks"
     defaultConfig.applicationId = "com.github.shadowsocks"
+    buildTypes {
+        getByName("release") {
+            signingConfig = signingConfigs.getByName("debug")
+        }
+    }
 }
 
 dependencies {
